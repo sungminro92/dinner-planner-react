@@ -1,5 +1,3 @@
-// Recipe card that takes recipe as props
-//
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { DataContext } from "../../App";
