@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #fffcee;
+  color: #2d1300;
+}
+
+.App {
+  font-family: "Open Sans", sans-serif;
+  background-color: #fffcee;
+}
+
+.navigation {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #fffcee;
+  border-bottom: 1px solid #2d1300;
+}
+
+.logo-font {
+  font-family: "Pacifico", cursive;
+  font-size: 24px;
+  color: #2d1300;
+  min-width: 150px;
+}
+
+.logo-font:hover {
+  color: #fdb196;
+}
+
+.spacer {
+  height: 120px;
+}
+/* 
+.navigation {
+  z-index: 100;
+  background-color: #fffcee;
+  width: 100vw;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #2d1300;
+} */
+.max-width {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+
+/* .main-nav {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  color: #2d1300;
+} */
+
+li a:hover {
+  /* font-weight: bold; */
+  /* border-bottom: 5px solid #fdb196; */
+  /* border-bottom: 5px solid #93c2c6; */
+}
+
+a {
+  text-decoration: none;
+  color: #2d1300;
+}
+
+/* li.nav-item {
+  list-style: none;
+} */
+
+/* font-family: 'Open Sans', sans-serif; */
+/* font-family: 'Pacifico', cursive; */
+/* font-family: 'Roboto', sans-serif; */
