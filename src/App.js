@@ -2,8 +2,6 @@ import React, { useState, useEffect, createContext, useReducer } from "react";
 import { Route, Redirect } from "react-router-dom";
 import FoodPage from "./Components/Foods/FoodPage";
 import DrinkPage from "./Components/Drinks/DrinkPage";
-import FoodDetail from "./Components/Detail/FoodDetail";
-import DrinkDetail from "./Components/Detail/DrinkDetail";
 import SavedPage from "./Components/Saved/SavedPage";
 import Home from "./Components/Home";
 import Alphabets from "./alphabets";
@@ -11,6 +9,7 @@ import "./styles.css";
 import Footer from "./Components/Home/Footer.js";
 import Navigation from "./Components/Navigation";
 import recipeReducer from "./Reducer";
+import RecipeDetail from "./Components/Detail/RecipeDetail";
 
 export const DataContext = createContext();
 const foodIdUrl = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
@@ -225,24 +224,6 @@ export default function App() {
     }
   }
 
-  // function loopThruSaved(type, recipeArr, id) {
-  //   let exists = false;
-  //   recipeArr.forEach((recipe, index) => {
-  //     if (type === "FOOD") {
-  //       if (recipe.idMeal === id) {
-  //         console.log("this food already exists in savedFoods");
-  //         exists = true;
-  //       }
-  //     } else if (type === "DRINK") {
-  //       if (recipe.idDrink === id) {
-  //         console.log("this drink already exists in savedDrinks");
-  //         exists = true;
-  //       }
-  //     }
-  //   });
-  //   return exists;
-  // }
-
   const addToSaved = (type, id) => {
     if (type === "FOOD") {
       saveRecipe("FOOD", foodIdUrl, id);
@@ -310,9 +291,9 @@ export default function App() {
         <main>
           <Route exact path="/" component={Home} />
           <Route exact path="/foods" component={FoodPage} />
-          <Route exact path="/foods/:food" component={FoodDetail} />
+          <Route exact path="/foods/:id" component={RecipeDetail} />
           <Route exact path="/cocktails" component={DrinkPage} />
-          <Route exact path="/cocktails/:cocktail" component={DrinkDetail} />
+          <Route exact path="/cocktails/:id" component={RecipeDetail} />
           <Route exact path="/savedRecipes" component={SavedPage} />
           <Redirect to="/" />
         </main>

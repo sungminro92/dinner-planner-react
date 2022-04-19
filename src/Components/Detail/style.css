@@ -1,3 +1,8 @@
+.recipe-detail-page {
+  padding: 1rem;
+  min-width: 350px;
+}
+
 div.recipe-title-container {
   width: 100%;
   min-width: 350px;
@@ -5,8 +10,16 @@ div.recipe-title-container {
   margin-bottom: 1rem;
 }
 
-.recipe-detail-page {
-  padding: 1rem;
+.recipe-detail-page h3 {
+  cursor: pointer;
+}
+
+.recipe-detail-page h3:hover {
+  font-weight: 900;
+}
+
+.recipe-detail-page > .remove {
+  color: red;
 }
 
 .recipe-instructions h1 {
@@ -16,7 +29,6 @@ div.recipe-title-container {
 .recipe-title-container h1 {
   font-family: "Roboto", sans-serif;
   font-size: 38px;
-  font-weight: bold;
 }
 
 .recipe-instructions {
@@ -116,4 +128,10 @@ div.recipe-title-container {
 
 .float-left {
   left: 1rem;
+  float: left;
+}
+
+.float-right {
+  right: 1rem;
+  float: right;
 }
