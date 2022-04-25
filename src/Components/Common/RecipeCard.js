@@ -42,7 +42,7 @@ const RecipeCard = ({ home, type, linkTo, recipe }) => {
             }
             onClick={() => recipeData.addToSaved(type, id)}
           >
-            SAVE THIS RECIPE
+            SAVE RECIPE
           </div>
         );
       } else {
