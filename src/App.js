@@ -60,35 +60,33 @@ export default function App() {
       "https://www.thecocktaildb.com/api/json/v1/1/list.php?a=list" // cocktail alcopholic
     ];
 
-    for (let i = 0; i < filtersUrls.length; i++) {
-      let url = filtersUrls[i];
+    filtersUrls.forEach(async (url) => {
       let res = await fetch(url);
       let json = await res.json();
-      if (i === 0 || i === 1) {
+      if (url.includes("themealdb")) {
         let categories = json.meals;
-        categories.map((category, index) => {
+        categories.map((category) => {
           for (let key in category) {
-            console.log(category);
-            if (i === 0) {
+            if (url.includes("c=list")) {
               if (key.includes("strCategory")) {
                 Categories.foodCategories.push(category[key]);
               }
-            } else if (i === 1) {
+            } else if (url.includes("a=list")) {
               if (key.includes("strArea")) {
                 Categories.foodAreas.push(category[key]);
               }
             }
           }
         });
-      } else if (i === 2 || i === 3) {
+      } else if (url.includes("thecocktaildb")) {
         let categories = json.drinks;
-        categories.map((category, index) => {
+        categories.forEach((category) => {
           for (let key in category) {
-            if (i === 2) {
+            if (url.includes("c=list")) {
               if (key.includes("strCategory")) {
                 Categories.drinkCategories.push(category[key]);
               }
-            } else if (i === 3) {
+            } else if (url.includes("a=list")) {
               if (key.includes("strAlcoholic")) {
                 Categories.drinkAlcoholic.push(category[key]);
               }
@@ -96,7 +94,8 @@ export default function App() {
           }
         });
       }
-    }
+    });
+
     setCategoryLists(Categories);
   }
 
