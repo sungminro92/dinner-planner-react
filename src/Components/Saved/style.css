@@ -27,6 +27,10 @@ p.saved-title {
   text-align: center;
 }
 
+.saved-title span {
+  color: #fc784f;
+}
+
 p.non-saved {
   margin: 5px auto;
 }
@@ -123,6 +127,7 @@ p.non-saved {
   border: 1px solid #2d1300;
   color: #2d1300;
   border-radius: 5px;
+  cursor: pointer
 }
 
 .delete-recipe:hover {

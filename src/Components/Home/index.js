@@ -99,8 +99,8 @@ const Home = () => {
         </div>
       </div>
       <div className="random-container">
-        <section>{displayFood()}</section>
-        <section>{displayDrink()}</section>
+        {displayFood()}
+        {displayDrink()}
       </div>
     </div>
   );

@@ -68,7 +68,6 @@ const SavedCard = ({ type, recipe, id }) => {
               className="delete-recipe"
               onClick={() => recipeData.deleteFromSaved("FOOD", id)}
             >
-              {" "}
               X DELETE THIS RECIPE
             </span>
           ) : (
@@ -76,7 +75,6 @@ const SavedCard = ({ type, recipe, id }) => {
               className="delete-recipe"
               onClick={() => recipeData.deleteFromSaved("DRINK", id)}
             >
-              {" "}
               X DELETE THIS RECIPE
             </span>
           )}

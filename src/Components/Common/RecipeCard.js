@@ -31,32 +31,15 @@ const RecipeCard = ({ home, type, linkTo, recipe }) => {
   }
 
   const displayButton = (type) => {
-    if (type === "FOOD" && !home) {
+    if (!home) {
       if (!recipe.existsInSaved) {
         return (
           <div
-            className="card-save-button-food"
-            onClick={() => recipeData.addToSaved(type, id)}
-          >
-            {" "}
-            SAVE THIS RECIPE
-          </div>
-        );
-      } else {
-        return (
-          <div
-            className="card-saved"
-            onClick={() => recipeData.deleteFromSaved(type, id)}
-          >
-            REMOVE FROM SAVED
-          </div>
-        );
-      }
-    } else if (type === "DRINK" && !home) {
-      if (!recipe.existsInSaved) {
-        return (
-          <div
-            className="card-save-button-drink"
+            className={
+              type === "FOOD"
+                ? "card-save-button-food"
+                : "card-save-button-drink"
+            }
             onClick={() => recipeData.addToSaved(type, id)}
           >
             SAVE THIS RECIPE
@@ -72,19 +55,75 @@ const RecipeCard = ({ home, type, linkTo, recipe }) => {
           </div>
         );
       }
-    } else if (home && type === "FOOD") {
+    } else if (home) {
       return (
         <Link to={linkTo} className="card-link">
-          <div className="card-save-button-food">VIEW THIS RECIPE</div>
-        </Link>
-      );
-    } else if (home && type === "DRINK") {
-      return (
-        <Link to={linkTo} className="card-link">
-          <div className="card-save-button-drink">VIEW THIS RECIPE</div>
+          <div
+            className={
+              type === "FOOD"
+                ? "card-save-button-food"
+                : "card-save-button-drink"
+            }
+          >
+            VIEW THIS RECIPE
+          </div>
         </Link>
       );
     }
+    // if (type === "FOOD" && !home) {
+    //   if (!recipe.existsInSaved) {
+    //     return (
+    //       <div
+    //         className="card-save-button-food"
+    //         onClick={() => recipeData.addToSaved(type, id)}
+    //       >
+    //         {" "}
+    //         SAVE THIS RECIPE
+    //       </div>
+    //     );
+    //   } else {
+    //     return (
+    //       <div
+    //         className="card-saved"
+    //         onClick={() => recipeData.deleteFromSaved(type, id)}
+    //       >
+    //         REMOVE FROM SAVED
+    //       </div>
+    //     );
+    //   }
+    // } else if (type === "DRINK" && !home) {
+    //   if (!recipe.existsInSaved) {
+    //     return (
+    //       <div
+    //         className="card-save-button-drink"
+    //         onClick={() => recipeData.addToSaved(type, id)}
+    //       >
+    //         SAVE THIS RECIPE
+    //       </div>
+    //     );
+    //   } else {
+    //     return (
+    //       <div
+    //         className="card-saved"
+    //         onClick={() => recipeData.deleteFromSaved(type, id)}
+    //       >
+    //         REMOVE FROM SAVED
+    //       </div>
+    //     );
+    //   }
+    // } else if (home && type === "FOOD") {
+    //   return (
+    //     <Link to={linkTo} className="card-link">
+    //       <div className="card-save-button-food">VIEW THIS RECIPE</div>
+    //     </Link>
+    //   );
+    // } else if (home && type === "DRINK") {
+    //   return (
+    //     <Link to={linkTo} className="card-link">
+    //       <div className="card-save-button-drink">VIEW THIS RECIPE</div>
+    //     </Link>
+    //   );
+    // }
   };
 
   return (
